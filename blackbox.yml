@@ -5,6 +5,7 @@ modules:
     prober: http
     http:
       method: POST
+      preferred_ip_protocol: "ip4"
   tcp_connect:
     prober: tcp
   pop3s_banner:
@@ -14,7 +15,7 @@ modules:
       - expect: "^+OK"
       tls: true
       tls_config:
-        insecure_skip_verify: false
+        insecure_skip_verify: true
   ssh_banner:
     prober: tcp
     tcp:
